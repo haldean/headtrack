@@ -1,0 +1,27 @@
+@misc{
+wiiproject,
+author = {Johnny Lee Chung},
+title = {Wii Projects},
+year = 2008,
+howpublished = {\url{http://johnnylee.net/projects/wii/}}}
+
+@misc{
+cachya,
+author = {Cachya Team},
+title = {Cachya Head Tracking Software},
+year = 2008,
+howpublished = {\url{http://www.cachya.com/esight/overview.php}}}
+
+@misc{
+trackir,
+author = {NaturalPoint Software},
+title = {TrackIR 5},
+year = 2008,
+howpublished = {\url{http://www.cachya.com/esight/overview.php}}}
+
+@misc{
+ehci,
+author = {Daniel Baggio},
+title = {Enhanced Human-Computer Interfaces through Webcam Image Processing},
+year = 2010,
+howpublished = {\url{http://code.google.com/p/ehci/}}}

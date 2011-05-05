@@ -1,0 +1,54 @@
+\input{/home/haldean/Documents/latex_template.tex}
+\title{Simulated Volumetric Displays using Head Tracking}
+\begin{document}
+\maketitle
+
+\section{Brief Summary}
+My project seeks to create a program that simulates a volumetric
+display by tracking the user's head and modifying the image displayed
+on the screen to mimick perspective. I will use OpenCV and its
+implementation of the Viola-Jones object detection framework to find
+faces in real-time. 
+
+\section{Past Research and Implementations}
+\begin{description}
+\item[VR Displays using Wiimotes] A similar project has been done by
+  Johnny Lee, in which he displayed visual output that was modified
+  based on head position to simulate a 3D display. However, he used a
+  Wiimote to track the user's head; the user wore glasses with
+  infrared LEDs attached, and a Wiimote then communicated the
+  location, rotation and distance of the glasses to the computer. He
+  has released the source code for program he uses to do the head
+  tracking \citep{wiiproject}, but it is written in C\# and uses the
+  Win32 API.
+
+\item[VR for Videogames: Cachya] Cachya is a system designed to
+  translate head location and pose into joystick or mouse events for
+  use in videogames. It is primarily used as input for flight
+  simulators, but could potentially be used in other games as
+  well. Cachya uses a webcam system, but requires the user to wear a
+  tracking marker on a hat. There is a very involved calibration step,
+  as well, in which the user has to directly manupulate various image
+  parameters (contrast, brightness, threshold, etc.) before they can
+  use the system. Even after all of this calibration, a significant
+  amount of smoothing is then done to prevent noisy input, which would
+  be detrimental to a videogame. It uses machine learning techniques
+  to attempt to identify the threshold between noise and input.
+
+\item[VR for Videogames: TrackIR] Another major player in the
+  videogame head tracking market is TrackIR \citep{trackir}. This
+  system uses a specialized camera and an marker device to track the
+  user's head. While the technology behind the camera is proprietary,
+  it does seem to be an infrared camera, perhaps with some sort of
+  structured light emission, as the marker device is reflective. It
+  has six degrees of freedom, just like Cachya: roll, pitch, yaw, pan
+  horizontally, pan vertically, and depth. Calibration is optional,
+  and allows the user to change the response to various kinds of
+  motion; for example, a user can select how sensitive the system
+  should be to movements in different axes.
+\end{description}
+
+\bibliographystyle{plainnat}
+\bibliography{proposal}
+
+\end{document}
