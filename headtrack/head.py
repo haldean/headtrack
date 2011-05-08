@@ -6,7 +6,6 @@ import ImageChops
 import math
 import numpy
 import opencv as cv
-import pygame
 
 from opencv import highgui
 from scipy import ndimage
@@ -20,10 +19,6 @@ class HeadTrack(object):
         highgui.cvSetCaptureProperty(self.camera, cv.highgui.CV_CAP_PROP_FRAME_WIDTH, 160)
         highgui.cvSetCaptureProperty(self.camera, cv.highgui.CV_CAP_PROP_FRAME_HEIGHT, 120)
 
-        # Initialize pygame and create the font to use for painting
-        # numbers to the screen.
-        pygame.init()
-
         self.blur_factor = 0
         self.diff_threshold = 40
         self.update_threshold = 1500
@@ -31,6 +26,10 @@ class HeadTrack(object):
         self.last_image = None
         self.last_centers = collections.deque()
         self.scale_mean = 0.3
+
+        self.last_mean = None
+        self.this_mean = None
+        self.diff_mean = None
 
     def get_image(self):
         """Return an image in PIL (Python Imaging Library) format."""
@@ -82,39 +81,20 @@ class HeadTrack(object):
         mean_center = (mean_center[0] * self.scale_mean, 
                        mean_center[0] * self.scale_mean)
 
-        return (thresh.convert('RGB'), mean_center)
+        print mean_center
+        return mean_center
 
     def start(self):
-        # Initialize the feedback window.
-        window = pygame.display.set_mode((1600,1000))
-        screen = pygame.display.get_surface()
         running = True
-
-        w, h = screen.get_width(), screen.get_height()
 
         # Main loop
         while running:
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    print "Exiting"
-                    running = False
-
             im, cm = self.get_filtered_image()
-
-            screen.fill((0,0,0))
-            pg_img = pygame.image.frombuffer(im.tostring(), im.size, im.mode)
-            screen.blit(pg_img, (0,0))
             if not math.isnan(cm[0]) and not math.isnan(cm[1]):
-                pos_back = (int(w * (.5 - cm[0])), int(h / 2))
-                pygame.draw.circle(screen, (0,255,0), pos_back, 100)
-
-                pos_front = (int(w * (.5 + cm[0])), int(h / 2))
-                pygame.draw.circle(screen, (255,0,0), pos_front, 150)
-            
-
-            # Swap the frame buffer with the displayed frame.
-            pygame.display.flip()
-
+                last_mean, this_mean = this_mean, cm
+                if last_mean:
+                    diff_mean = (this_mean[0] - last_mean[0], this_mean[1] - last_mean[1])
+            print diff_mean
 
 if __name__ == '__main__':
     head = HeadTrack()
