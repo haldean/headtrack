@@ -6,7 +6,7 @@ all : parallax.cpp
 	g++ parallax.o -o parallaxis -fPIC -arch i386 -L/Developer/Panda3D/lib -lp3framework -lpanda -lpandafx -lpandaexpress -lp3dtoolconfig -lp3dtool -lp3pystub -lp3direct ${OPENCV_LIBS}
 
 clean :
-	rm parallax.o parallax
+	rm parallax.o parallaxis
 
 models :
 	find models -name '*.dae' | cut -f 1 -d "." | xargs -If /Developer/Tools/Panda3D/dae2egg f.dae -o f.egg 

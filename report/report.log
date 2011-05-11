@@ -1,258 +1,30 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2011.4.29)  11 MAY 2011 17:02
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2011.5.11)  11 MAY 2011 17:21
 entering extended mode
+ restricted \write18 enabled.
  %&-line parsing enabled.
-**\input report.tex
-(./report.tex (/home/haldean/Documents/latex_template.tex
-(/usr/share/texmf-texlive/tex/latex/base/article.cls
-Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/share/texmf-texlive/tex/latex/base/size10.clo
-File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
-)
-\c@part=\count79
-\c@section=\count80
-\c@subsection=\count81
-\c@subsubsection=\count82
-\c@paragraph=\count83
-\c@subparagraph=\count84
-\c@figure=\count85
-\c@table=\count86
-\abovecaptionskip=\skip41
-\belowcaptionskip=\skip42
-\bibindent=\dimen102
-)
-(/usr/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2000/07/18 v2.13 AMS math features
-\@mathmargin=\skip43
+**\nonstopmode\input report.tex
+(./report.tex
 
-For additional information on amsmath, use the `?' option.
-(/usr/share/texmf-texlive/tex/latex/amsmath/amstext.sty
-Package: amstext 2000/06/29 v2.01
+! LaTeX Error: File `/home/haldean/.ltemplate.tex' not found.
 
-(/usr/share/texmf-texlive/tex/latex/amsmath/amsgen.sty
-File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks14
-\ex@=\dimen103
-))
-(/usr/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty
-Package: amsbsy 1999/11/29 v1.2d
-\pmbraise@=\dimen104
-)
-(/usr/share/texmf-texlive/tex/latex/amsmath/amsopn.sty
-Package: amsopn 1999/12/14 v2.01 operator names
-)
-\inf@bad=\count87
-LaTeX Info: Redefining \frac on input line 211.
-\uproot@=\count88
-\leftroot@=\count89
-LaTeX Info: Redefining \overline on input line 307.
-\classnum@=\count90
-\DOTSCASE@=\count91
-LaTeX Info: Redefining \ldots on input line 379.
-LaTeX Info: Redefining \dots on input line 382.
-LaTeX Info: Redefining \cdots on input line 467.
-\Mathstrutbox@=\box26
-\strutbox@=\box27
-\big@size=\dimen105
-LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
-\macc@depth=\count92
-\c@MaxMatrixCols=\count93
-\dotsspace@=\muskip10
-\c@parentequation=\count94
-\dspbrk@lvl=\count95
-\tag@help=\toks15
-\row@=\count96
-\column@=\count97
-\maxfields@=\count98
-\andhelp@=\toks16
-\eqnshift@=\dimen106
-\alignsep@=\dimen107
-\tagshift@=\dimen108
-\tagwidth@=\dimen109
-\totwidth@=\dimen110
-\lineht@=\dimen111
-\@envbody=\toks17
-\multlinegap=\skip44
-\multlinetaggap=\skip45
-\mathdisplay@stack=\toks18
-LaTeX Info: Redefining \[ on input line 2666.
-LaTeX Info: Redefining \] on input line 2667.
-)
-(/usr/share/texmf-texlive/tex/latex/amsfonts/amssymb.sty
-Package: amssymb 2009/06/22 v3.00
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: ltemplate.tex)
 
-(/usr/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty
-Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
-\symAMSa=\mathgroup4
-\symAMSb=\mathgroup5
-LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
-))
-(/usr/share/texmf-texlive/tex/latex/appendix/appendix.sty
-Package: appendix 2009/09/02 v1.2b extra appendix facilities
-\c@@pps=\count99
-\c@@ppsavesec=\count100
-\c@@ppsaveapp=\count101
-)
-(/usr/share/texmf-texlive/tex/latex/graphics/color.sty
-Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+Enter file name: 
+! Emergency stop.
+<read *> 
+         
+l.1 \input{/home/haldean/.ltemplate.tex}
+                                        ^^M
+*** (cannot \read from terminal in nonstop modes)
 
-(/etc/texmf/tex/latex/config/color.cfg
-File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
-)
-Package color Info: Driver file: dvips.def on input line 130.
-
-(/usr/share/texmf-texlive/tex/latex/graphics/dvips.def
-File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
-)
-(/usr/share/texmf-texlive/tex/latex/graphics/dvipsnam.def
-File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
-))
-(/usr/share/texmf-texlive/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2009/08/06 v1.8 e-TeX tools for LaTeX
-
-(/usr/share/texmf-texlive/tex/latex/etex-pkg/etex.sty
-Package: etex 1998/03/26 v2.0 eTeX basic definition package (PEB)
-\et@xins=\count102
-))
-(/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
-Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
-
-(/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
-\KV@toks@=\toks19
-)
-(/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
-Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
-
-(/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
-Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
-)
-(/etc/texmf/tex/latex/config/graphics.cfg
-File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
-)
-Package graphics Info: Driver file: dvips.def on input line 91.
-)
-\Gin@req@height=\dimen112
-\Gin@req@width=\dimen113
-)
-(/usr/share/texmf-texlive/tex/latex/index/index.sty
-Package: index 2004/01/20 v4.2beta Improved index support (dmj)
-\@indexbox=\insert233
-\indexproofstyle=\toks20
-)
-(/usr/share/texmf-texlive/tex/latex/listings/listings.sty
-\lst@mode=\count103
-\lst@gtempboxa=\box28
-\lst@token=\toks21
-\lst@length=\count104
-\lst@currlwidth=\dimen114
-\lst@column=\count105
-\lst@pos=\count106
-\lst@lostspace=\dimen115
-\lst@width=\dimen116
-\lst@newlines=\count107
-\lst@lineno=\count108
-\lst@maxwidth=\dimen117
-
-(/usr/share/texmf-texlive/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
-\c@lstnumber=\count109
-\lst@skipnumbers=\count110
-\lst@framebox=\box29
-)
-(/usr/share/texmf-texlive/tex/latex/listings/listings.cfg
-File: listings.cfg 2007/02/22 1.4 listings configuration
-))
-Package: listings 2007/02/22 1.4 (Carsten Heinz)
-
-(/usr/share/texmf-texlive/tex/latex/graphics/lscape.sty
-Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
-)
-(/usr/share/texmf-texlive/tex/latex/natbib/natbib.sty
-Package: natbib 2009/07/16 8.31 (PWD, AO)
-\bibhang=\skip46
-\bibsep=\skip47
-LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count111
-)
-(/usr/share/texmf-texlive/tex/latex/ltxmisc/url.sty
-\Urlmuskip=\muskip11
-Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
-)
-(/usr/share/texmf-texlive/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2004/09/05 1.3 listings language file
-)
-(/usr/share/texmf-texlive/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
-)
-\idxtitle@todo=\toks22
-\tf@todo=\write3
-\openout3 = `report.tod'.
-
-Package index Info: Writing index file report.tod on input line 43.
-) (./report.aux)
-\openout1 = `report.aux'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-\c@lstlisting=\count112
-LaTeX Font Info:    Try loading font information for U+msa on input line 5.
-
-(/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2009/06/22 v3.00 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 5.
-
-(/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-) (./report.toc)
-\tf@toc=\write4
-\openout4 = `report.toc'.
-
- [1
-
-]
-[2]
-File: figures/facearch.eps Graphic file (type eps)
- <figures/facearch.eps> [3] [4]
-File: figures/grapharch.eps Graphic file (type eps)
- <figures/grapharch.eps>
-LaTeX Font Info:    Try loading font information for OMS+cmss on input line 247
-.
-LaTeX Font Info:    No file OMScmss.fd. on input line 247.
-
-
-LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbullet' on input line 247.
-
-[5] (../parallax.h
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <8> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 1.
- [6]) (../parallax.cpp [7] [8] [9] [10]) (../Makefile)
-[11] [12] [13] (./report.aux)
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
- ) 
+ 
 Here is how much of TeX's memory you used:
- 4236 strings out of 495062
- 54584 string characters out of 1182644
- 288440 words of memory out of 3000000
- 7350 multiletter control sequences out of 15000+50000
- 13495 words of font info for 53 fonts, out of 3000000 for 9000
- 28 hyphenation exceptions out of 8191
- 29i,8n,49p,825b,1562s stack positions out of 5000i,500n,10000p,200000b,50000s
-
-Output written on report.dvi (13 pages, 96568 bytes).
+ 7 strings out of 493747
+ 146 string characters out of 3143546
+ 49070 words of memory out of 3000000
+ 3397 multiletter control sequences out of 15000+200000
+ 3640 words of font info for 14 fonts, out of 3000000 for 9000
+ 714 hyphenation exceptions out of 8191
+ 5i,0n,3p,68b,8s stack positions out of 5000i,500n,10000p,200000b,50000s
+!  ==> Fatal error occurred, no output PDF file produced!
