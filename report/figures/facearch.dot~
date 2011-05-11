@@ -1,0 +1,30 @@
+digraph facearch {
+	node [shape="box3d",fontname="sans"];
+	
+	camera [label="Camera"];
+	preprocessor [label="Image Preprocessor"];
+	haar [label="Classifier Cascade"];
+	faceestimator [label="Face Location Estimator"];
+	display [label="Display",shape="none"];
+	result [label="Emit Location",shape="none"];
+
+	node [shape="none",fontsize=10];
+	
+	rgb [label="RGB Image (640x480)"];
+	gray [label="Grayscale Image (128x96)"];
+	rectset [label="Rectangle Set"];
+	face [label="Face Location"];
+
+	camera -> rgb;
+	rgb -> preprocessor;
+	preprocessor -> gray;
+	gray -> haar;
+	haar -> rectset;
+	rectset -> faceestimator;
+	faceestimator -> face;
+	face -> result;
+	
+	rgb -> display;
+	face -> display;
+	
+}
