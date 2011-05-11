@@ -1,0 +1,21 @@
+digraph facearch {
+	node [shape="box3d",fontname="sans"];
+
+	eventloop [label="Graphics Event Loop"];
+	head [label="Head Detection Subsystem"];
+	translate [label="Point Translation"];
+	display [label="Camera Manipulator"];
+	
+	node [shape="none",fontsize=10];
+	
+	headloc [label="Head Location"];
+	sceneloc [label="Scene Location"];
+
+	eventloop -> head;
+	head -> headloc;
+	headloc -> translate;
+	translate -> sceneloc;
+	sceneloc -> display;
+	display -> eventloop [style="dashed"];
+	
+}

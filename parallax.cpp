@@ -23,6 +23,7 @@ AsyncTask::DoneStatus updateLocationTask(GenericAsyncTask* task, void* data) {
 
   if (last_loc != NULL) {
     LVector3f diff = loc_vector - last_loc;
+    cout << diff.length();
     if (diff.length() > diff_threshold) {
       camera.set_pos(loc_vector);
     }

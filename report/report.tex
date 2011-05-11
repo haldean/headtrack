@@ -1,47 +1,23 @@
-\documentclass[letterpaper]{article}
-
-\author{William Brown (whb2107)}
-
-\usepackage{amsmath,amssymb,appendix,color,etoolbox,
-  graphicx,lscape,natbib,url}
-
-\definecolor{gray}{gray}{0.95}
-
-\renewcommand{\familydefault}{\sfdefault}
-
-\newcommand\imgfig[4]{
-\begin{figure}[h]
-  \centering
-  \includegraphics[scale=#2]{figures/#1}
-  \caption{#3}
-  \label{fig:#4}
-\end{figure}}
-
-\newcommand\figref[1]{Figure \ref{fig:#1}}
-\newcommand\tabref[1]{Table \ref{tab:#1}}
-\newcommand\code[1]{\texttt{#1}}
-
-\setcounter{secnumdepth}{5}
-\setcounter{tocdepth}{5}
-
-\newcommand\startappendix{\appendix\appendixpage\addappheadtotoc}
-
+\input{/home/haldean/Documents/latex_template.tex}
 \title{Parallaxis: a Simulated Volumetric Display}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-  Parallaxis is a system for computers equipped with only a webcam to
-  simulate a three-dimensional volumetric display on a computer
-  monitor. It simulates this display by tracking the user's head in
-  successive frames, analyzing its motion, and then manipulating a
-  displayed scene to reflect the new position of the head.
+  Parallaxis is a system written in C++ for computers equipped with
+  only a webcam to simulate a three-dimensional volumetric display on
+  a computer monitor. It simulates this display by tracking the user's
+  head in successive frames, analyzing its motion, and then
+  manipulating a displayed scene to reflect the new position of the
+  head.
 \end{abstract}
 
 \tableofcontents
+\newpage
 
-\section{Volumetric Displays}
+\section{Background Information}
+\subsection{Volumetric Displays}
 Volumetric displays (devices capable of three-dimensional video
 output) have long been relegated to the realm of science fiction;
 until recently, volumetric displays existed only in imaginations. In
@@ -66,7 +42,7 @@ a popular implementation that did not utilize tracking markers, but
 there are published papers that suggest that it has been done, and
 with good results. 
 
-\section{Motivation}
+\subsection{Motivation}
 I wanted to create a volumetric display because it has interesting,
 practical uses and is relatively simple to implement, given the
 libraries available. It also is something that is fun for an end-user
@@ -144,12 +120,8 @@ cascade, along with a cascade designed specifically for detecting
 frontal faces. I used this to implement my own facial detector.
 
 \subsubsection{Subsystem Architecture}
-\begin{figure}[hp]
-  \centering
-  \includegraphics[scale=0.6]{figures/facearch}
-  \caption{Architecture of the face detection subsystem}
-  \label{fig:facearch}
-\end{figure}
+\imgfig{facearch}{0.6}{Architecture of the face detection
+  subsystem}{facearch}
 
 The face detector's architecture is shown in \figref{facearch}. The
 system polls the camera for a frame. The frame it receives in return
@@ -189,7 +161,6 @@ standard smoothing algorithm called exponential smoothing. It treats
 the output of the face estimator as a linear recurrence, and defines a
 second first-order linear recurrence in terms of the previous smoothed
 value and current face value. The exact recurrence is as follows
-
 \begin{align*}
   s_1 &= x_0 \\
   s_{t+1} &= (1 - \alpha) x_t + \alpha s_t, \; t \ge 1
@@ -209,3 +180,99 @@ the z-component of the face's location). In the end, I used $\alpha_x
 fairly accurate and low-latency response to movement, with very little
 jitter.
 
+\subsection{Graphics Output}
+
+The graphics output uses the Panda3D game engine to provide a realtime
+3D graphics experience. I chose Panda3D because it had bindings for
+both C++ and Python, and at the time I wasn't sure which I would
+use. It also is available for Mac, Windows and Linux, which meant that
+it fulfilled my cross-platform requirement.
+
+The graphics subsystem is significantly more simple than the head
+detection subsystem. An overview of the architecture is shown in
+\figref{grapharch}. The graphics event loop, which runs at a fixed
+rate, is what starts the process of getting a face location and
+translating that to a camera location in the scene. I set the event
+loop up to run at 10 Hz, as the face detection took an amortized 50
+milliseconds and I wanted to pad that a bit in case it took longer for
+some reason. 
+
+The events loop first requests the location of the face from the the
+head detection system. The returned value has three components:
+\code{x}, \code{y} and \code{area}. \code{x} and \code{y} are in the
+range $(-0.5, 0.5)$; these values represent the distance between the
+center of the face and the center of the image, normalized over the
+dimensions of the image. The equation for \code{x} is shown in
+\eqnref{xdist}, and the equation for \code{y} is equivalent. There is
+also a scaling factor, $s_x$, which determines the response to a
+movement along the x-axis. I experimented with these values to
+determine the best response along each axis for the highest realism. I
+eventually settled on $s_x = 15$ and $s_y = 10$.
+
+The \code{area} component of the face location represents the
+estimated area of the face. To translate this to an approximate depth,
+I use the equation shown in \eqnref{zdist}. I determined the maximum
+face area is the height of the image squared (around 10,000) as this
+represents the largest face that the system can
+find. $z_{\mathrm{max}}$ represents the farthest away the camera can
+get from the model; as the user moves closer to the camera, the area
+increases and the camera approaches $z = 0$.
+
+Once the camera location vector has been determined, the camera is set
+to the new location and Panda3D takes care of smoothly translating the
+current location of the camera to the new location of the camera. This
+translation is done so that it aligns with the events loop; since my
+events loop runs every tenth of a second, the camera will be moved at
+a velocity that ensures that it is at the correct location one-tenth
+of a second later.
+
+\begin{equation}
+  \label{eq:xdist}
+  x = s_x \frac{x_{\mathrm{center}} - x_{\mathrm{face}}}{width}
+\end{equation}
+
+\begin{equation}
+  \label{eq:zdist}
+  z = z_{\mathrm{max}} - \frac{area}{area_{\mathrm{max}}}
+\end{equation}
+
+\imgfig{grapharch}{0.6}{Architecture of the graphics
+  subsystem}{grapharch}
+
+\section{Execution}
+
+\subsection{Compiling}
+To compile Parallaxis, the following libraries and tools are required:
+\begin{itemize}
+\item OpenCV, version 2.1 or later. This is used for face detection
+  and image processing. \url{http://opencv.willowgarage.com}
+\item Panda3D, version 1.7 or later. This is used as the 3D engine for
+  the graphic display. \url{http://panda3d.org}
+\item A C++ compiler.
+\item GNU Make
+\end{itemize}
+
+To compile Parallaxis, run \code{make}.
+
+\subsection{Usage}
+To run Parallaxis, run \code{./parallaxis [model]}, replacing
+\code{[model]} with the model you would like to be placed in the
+scene. Models must be in EGG format. Models can either be placed in
+the models directory, in which case they can be referenced only by
+name (for example, the included model \code{cube.egg} in the models
+directory can be viewed by calling \code{./parallaxis cube}), or they
+must be referenced by an absolute file path.
+
+\section{Results}
+
+As mentioned earlier, the results I got were both believable and had a
+fairly low amount of jitter. To analyze output jitter, I plotted the
+discrete derivative of the camera location. This plot is shown in
+\figref{jitter}. 
+
+\section{Code Listing}
+\lstinputlisting[caption={parallax.h}]{../parallax.h}
+\lstinputlisting[caption={parallax.cpp}]{../parallax.cpp}
+\lstinputlisting[caption={Makefile}]{../Makefile}
+
+\end{document}

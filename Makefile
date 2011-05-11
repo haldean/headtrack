@@ -3,7 +3,7 @@ OPENCV_LIBS=`pkg-config --libs opencv`
 
 all : parallax.cpp
 	g++ -c parallax.cpp -o parallax.o -fPIC -O2 -arch i386 -I/usr/include/python2.6 -I/Developer/Panda3D/include ${OPENCV_INCLUDE}
-	g++ parallax.o -o parallax -fPIC -arch i386 -L/Developer/Panda3D/lib -lp3framework -lpanda -lpandafx -lpandaexpress -lp3dtoolconfig -lp3dtool -lp3pystub -lp3direct ${OPENCV_LIBS}
+	g++ parallax.o -o parallaxis -fPIC -arch i386 -L/Developer/Panda3D/lib -lp3framework -lpanda -lpandafx -lpandaexpress -lp3dtoolconfig -lp3dtool -lp3pystub -lp3direct ${OPENCV_LIBS}
 
 clean :
 	rm parallax.o parallax
