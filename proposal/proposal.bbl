@@ -1,0 +1,49 @@
+\begin{thebibliography}{7}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Baggio(2010)]{ehci}
+D.~Baggio.
+\newblock Enhanced human-computer interfaces through webcam image processing.
+\newblock \url{http://code.google.com/p/ehci/}, 2010.
+
+\bibitem[{C} et~al.(2010){C}, {Shastry}, {Ravindran}, {Srikanth}, and
+  {Lakshmikhanth}]{eyetracking}
+H.~{C}, K.~R. {Shastry}, M.~{Ravindran}, M.~V.~V.~N.~S. {Srikanth}, and
+  N.~{Lakshmikhanth}.
+\newblock {Survey on Various Gesture Recognition Techniques for Interfacing
+  Machines Based on Ambient Intelligence}.
+\newblock \emph{ArXiv e-prints}, November 2010.
+
+\bibitem[{Cachya Team}(2008)]{cachya}
+{Cachya Team}.
+\newblock Cachya head tracking software.
+\newblock \url{http://www.cachya.com/esight/overview.php}, 2008.
+
+\bibitem[Chung(2008)]{wiiproject}
+J.~L. Chung.
+\newblock Wii projects.
+\newblock \url{http://johnnylee.net/projects/wii/}, 2008.
+
+\bibitem[{NaturalPoint Software}(2008)]{trackir}
+{NaturalPoint Software}.
+\newblock {TrackIR} 5.
+\newblock \url{http://www.cachya.com/esight/overview.php}, 2008.
+
+\bibitem[Toyama(1999)]{parallax}
+K.~Toyama.
+\newblock Head parallax tracking for control of a virtual space: a comparison
+  of algorithms.
+\newblock In \emph{Systems, Man, and Cybernetics, 1999. IEEE SMC '99 Conference
+  Proceedings. 1999 IEEE International Conference on}, volume~6, pages 1 -- 6
+  vol.6, 1999.
+
+\bibitem[Zyga(2009)]{sonydisplay}
+L.~Zyga.
+\newblock Sony unveils 360-degree 3d display.
+\newblock PhysOrg (\url{http://www.physorg.com/news175446089.html}), 2009.
+
+\end{thebibliography}
